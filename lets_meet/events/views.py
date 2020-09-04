@@ -1,9 +1,29 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic import ListView, UpdateView, DeleteView, CreateView
+from django.views.generic import View, ListView, UpdateView, DeleteView, CreateView, DetailView
+from .models import Event
+
+class EventList(ListView):
+    model = Event
+    template_name = 'events/list_of_events.html'
+    #TODO list_of_events.html
+
+class EventDisplay(DetailView):
+    model = Event
+    template_name = 'events/event_detail.html'
+    #TODO event_detail.html
+
+class EventCreate(CreateView):
+    model = Event
+    template_name = 'events/create.html'
+    #TODO create.html
 
 
-def home_page_view(request):
-    return HttpResponse('Hello, world!')
+class EventUpdate(UpdateView):
+    model = Event
+    template_name = 'events/update.html'
+    #TODO update.html
 
-# Create your views here.
+
+class EventDelete(DeleteView):
+    model = Event
+    template_name = 'events/delete.html'
+    #TODO delete.html
