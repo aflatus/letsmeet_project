@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('events.urls')),
     path('tinymce/', include('tinymce.urls')),
+    path('', include('comments.urls')),
 ]

@@ -1,14 +1,21 @@
 from django.views.generic import View, ListView, UpdateView, DeleteView, CreateView, DetailView
 from .models import Event
+from comments.models import Comment
 
 class EventList(ListView):
     model = Event
     template_name = 'events/list_of_events.html'
     #TODO list_of_events.html
 
-class EventDisplay(DetailView):
+class EventDetail(DetailView):
     model = Event
     template_name = 'events/event_detail.html'
+    #TODO event_detail.html
+
+class CommentCreate(CreateView):
+    model = Comment
+    template_name = 'events/detail.html'
+    fields = ('comment', )
     #TODO event_detail.html
 
 class EventCreate(CreateView):
