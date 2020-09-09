@@ -1,9 +1,8 @@
 from django.db import models
 from django.shortcuts import reverse
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 
-User = get_user_model()
 
 class Category(models.Model):
     name = models.CharField(max_length=25, unique=True)

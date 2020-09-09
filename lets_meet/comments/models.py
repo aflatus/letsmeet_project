@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.shortcuts import reverse
 
 from events.models import Event
 
-User = get_user_model()
+
 class Comment(models.Model):
     comment = models.TextField(max_length=500)
     creation_date = models.DateField(auto_now=True)
